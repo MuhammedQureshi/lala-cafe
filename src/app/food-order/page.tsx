@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { X, Menu as MenuIcon, ExternalLink, ChevronDown, Menu } from 'lucide-react';
+import Navbar from '../components/navbar';
 
 export default function FoodOrderPage() {
   const [showBanner, setShowBanner] = useState(true);
@@ -31,73 +32,7 @@ export default function FoodOrderPage() {
       )}
 
        {/* Header */}
-       <header className="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="logo-font text-4xl md:text-5xl text-gray-800">
-            Lala Cafe
-          </Link>
-          <nav className="hidden md:flex text-black items-center gap-6">
-            <a href="#menu" className="text-sm hover:text-[#5f2b11] transition">Menu</a>
-            <a href="#" className="text-sm hover:text-[#5f2b11] transition">Delivery & Takeaway</a>
-            <a href="#contact" className="text-sm hover:text-[#5f2b11] transition">Contact</a>
-          </nav>
-          <button
-            className="md:hidden p-2 hover:bg-gray-100 rounded"
-            onClick={() => setShowMobileMenu(true)}
-          >
-            <Menu className="w-6 h-6 text-black" />
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      {showMobileMenu && (
-        <div className="fixed inset-0 bg-white text-black z-50 md:hidden">
-          <div className="flex flex-col h-full">
-            {/* Close Button */}
-            <div className="p-6">
-              <button
-                onClick={() => setShowMobileMenu(false)}
-                className="p-2 hover:bg-gray-100 rounded-full transition"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Menu Items */}
-            <nav className="flex-1 px-6">
-              <a
-                href="#"
-                className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
-              >
-                Menu
-              </a>
-              <a
-                href="/food-order"
-                className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
-              >
-                Delivery & Takeaway
-              </a>
-              <a
-                href="#"
-                className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
-              >
-                Contact
-              </a>
-            </nav>
-
-            {/* Address and Contact */}
-            <div className="px-6 pb-8">
-              <h3 className="text-sm font-bold mb-4 tracking-wide">ADDRESS AND CONTACT</h3>
-              <div className="space-y-1 text-sm">
-                <p>90 Streatham Hill</p>
-                <p>London SW2 4RD</p>
-                <p className="mt-2">02086711918</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+       <Navbar />
 
       {/* Hero Section */}
       <section className="bg-[#742f0d] py-16">
@@ -112,42 +47,12 @@ export default function FoodOrderPage() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {!orderType ? (
-              <div className="text-center">
-                <h2 className="text-2xl text-black md:text-3xl font-bold mb-12 uppercase">
-                  How would you like to order?
-                </h2>
-
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                  <button
-                    onClick={() => setOrderType('delivery')}
-                    className="border-2 border-gray-800 px-12 hover:underline py-4 text-black hover:bg-gray-800 hover:text-white transition uppercase font-semibold tracking-wide text-lg min-w-[200px]"
-                  >
-                    Delivery
-                  </button>
-                  <button
-                    onClick={() => setOrderType('takeaway')}
-                    className="border-2 border-gray-800 px-12 py-4 text-gray-800 hover:bg-gray-800 hover:text-white transition uppercase font-semibold tracking-wide text-lg min-w-[200px]"
-                  >
-                    Takeaway
-                  </button>
-                </div>
-              </div>
-            ) : (
               <div>
                 <div className="text-center mb-12">
                   <h2 className="text-2xl md:text-3xl text-black font-bold mb-4 uppercase">
                     Available with one of our partners
                   </h2>
-                  <button
-                    onClick={() => setOrderType(null)}
-                    className="text-gray-600 hover:text-gray-800 underline"
-                  >
-                    ← Back to options
-                  </button>
                 </div>
-
-                {orderType === 'delivery' && (
                   <div className="space-y-6 text-black">
                     {/* Deliveroo */}
                     <a
@@ -157,10 +62,9 @@ export default function FoodOrderPage() {
                       className="flex items-center justify-center p-6 border-b hover:bg-gray-50 transition group"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 flex items-center justify-center">
+                        <div className="w-[10rem] h-[10rem] flex items-center justify-center">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY044Thr0atnFbx4mtiy8O4is5p9EPSoa-qg&s" alt="" />
                         </div>
-                        <span className="font-semibold text-lg">DELIVEROO</span>
                       </div>
                     </a>
 
@@ -172,10 +76,9 @@ export default function FoodOrderPage() {
                       className="flex items-center justify-center p-6 border-b hover:bg-gray-50 transition group"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 flex items-center justify-center">
-                          <img src="https://logos-world.net/wp-content/uploads/2021/02/Just-Eat-Symbol.png" alt="" />
+                        <div className="w-[10rem] h-[10rem] flex items-center justify-center">
+                          <img className='rounded-2xl' src="https://logos-world.net/wp-content/uploads/2021/02/Just-Eat-Symbol.png" alt="" />
                         </div>
-                        <span className="font-semibold text-lg">JUST EAT</span>
                       </div>
                     </a>
 
@@ -187,14 +90,12 @@ export default function FoodOrderPage() {
                       className="flex items-center justify-center p-6 border-b hover:bg-gray-50 transition group"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 flex items-center justify-center">
+                        <div className="w-[10rem] h-[10rem] flex items-center justify-center">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6VSGDpKsP_2nu9bnxc05vKy_IxJMTp52PMg&s" alt="" />
                         </div>
-                        <span className="font-semibold text-lg">UBER EATS</span>
                       </div>
                     </a>
                   </div>
-                )}
 
                 {orderType === 'takeaway' && (
                   <div className="text-center p-12 bg-gray-50 rounded-lg">
@@ -211,7 +112,6 @@ export default function FoodOrderPage() {
                   </div>
                 )}
               </div>
-            )}
           </div>
         </div>
       </section>
