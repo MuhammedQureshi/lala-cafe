@@ -14,9 +14,9 @@ export default function Navbar() {
             Lala Cafe
           </Link>
           <nav className="hidden md:flex text-black items-center gap-6">
-            <a href="/menu" className="text-sm hover:text-[#5f2b11] transition">Menu</a>
-            <a href="/food-order" className="text-sm hover:text-[#5f2b11] transition">Delivery & Takeaway</a>
-            <a href="/#contact" className="text-sm hover:text-[#5f2b11] transition">Contact</a>
+            <Link href="/menu" className="text-sm hover:text-[#5f2b11] transition">Menu</Link>
+            <Link href="/food-order" className="text-sm hover:text-[#5f2b11] transition">Delivery & Takeaway</Link>
+            <Link href="/#contact" className="text-sm hover:text-[#5f2b11] transition">Contact</Link>
           </nav>
           <button
             className="md:hidden p-2 hover:bg-gray-100 rounded"
@@ -43,24 +43,24 @@ export default function Navbar() {
 
             {/* Menu Items */}
             <nav className="flex-1 px-6">
-              <a
+              <Link
                 href="/menu"
                 className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
               >
                 Menu
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/food-order"
                 className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
               >
                 Delivery & Takeaway
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#contact"
                 className="block py-3 text-lg font-normal hover:underline decoration-2 underline-offset-4 transition"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
 
             {/* Address and Contact */}
