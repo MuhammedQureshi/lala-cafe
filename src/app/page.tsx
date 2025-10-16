@@ -33,33 +33,33 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-white">
-        <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center py-16 px-4">
-          <div className="relative h-[400px] md:h-[600px]">
-            <img
-              src="https://ext.same-assets.com/1733516/1118577887.webp"
-              alt="Moroccan dishes"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
+      <section className="relative">
+        <div className="absolute inset-0">
+          <img
+            src="/tea2.jpg"
+            alt="Traditional Moroccan mint tea"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 uppercase">
-              Welcome to Lala Cafe<br />Moroccan Cuisine
+        <div className="relative container mx-auto px-4 py-24 md:py-40">
+          <div className="max-w-3xl">
+            <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight uppercase">
+              A Taste of North African Cuisine
             </h1>
-            <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-            Lala Café is your Moroccan café and restaurant located in Brixton. Step inside and discover the warm hospitality and rich flavors of Morocco, right here in South London.
-
-            At Lala Café, we serve a delicious selection of Moroccan and Middle Eastern dishes — from aromatic tagines and fluffy couscous to freshly baked pastries and traditional mint tea. Every dish is prepared with authentic ingredients and is 100% halal.
-
-            Whether you’re joining us for a relaxed meal, grabbing a takeaway, or ordering for delivery, Lala Café brings the taste of Morocco to your table.
+            <p className="mt-6 text-white/90 text-lg md:text-xl leading-relaxed">
+              Discover warm hospitality and rich Moroccan flavors in the heart of South London.
+              From aromatic tagines and fluffy couscous to freshly baked pastries and traditional mint tea.
             </p>
-            <Link
-              href="/food-order"
-              className="inline-block rounded-xl border-2 border-gray-800 px-8 py-3 text-gray-800 hover:bg-gray-800 hover:text-white transition uppercase font-semibold tracking-wide"
-            >
-              Order Now
-            </Link>
+            <div className="mt-10">
+              <Link
+                href="/food-order"
+                className="inline-block rounded-xl border-2 border-white px-8 py-3 text-white hover:bg-white hover:text-[#742f0d] transition uppercase font-semibold tracking-wide"
+              >
+                Order Now
+              </Link>
+            </div>
           </div>
         </div>
       </section>

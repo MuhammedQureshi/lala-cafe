@@ -8,9 +8,9 @@ export default function Navbar() {
   return (
     <div>
                {/* Header */}
-       <header className="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-40">
+       <header className="bg-white border-b sticky border-gray-200 px-4 py-4 top-0 z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="logo-font text-4xl md:text-5xl text-gray-800">
+        <Link href="/" className="logo-font font-cursive text-4xl md:text-5xl text-gray-800">
             Lala Cafe
           </Link>
           <nav className="hidden md:flex text-black items-center gap-6">
